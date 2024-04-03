@@ -1,4 +1,8 @@
 #!/bin/bash
+clear
+
+echo "===========Avail light client Install Easy======= " && sleep 1
+
 read -p "Do you update and install curl? (y/n): " choice
 
 if [ "$choice" == "y" ]; then
@@ -13,7 +17,7 @@ After=network-online.target
 [Service]
 User=root
 WorkingDirectory=/root
-ExecStart=curl -sL1 avail.sh | bash
+ExecStart=/bin/bash -c 'curl -sL1 avail.sh | bash'
 Restart=always
 StandardOutput=append:/root/avl-lc.log
 StandardError=append:/root/avl-lc.log
