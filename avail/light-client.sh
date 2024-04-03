@@ -1,6 +1,11 @@
 #!/bin/bash
+read -p "Do you update and install curl? (y/n): " choice
+
+if [ "$choice" == "y" ]; then
+
 sudo apt update && sudo apt upgrade -y
 sudo apt install curl
+fi
 sudo tee /etc/systemd/system/avl-light.service > /dev/null <<EOF
 [Unit]
 Description=Avail light client Daemon
