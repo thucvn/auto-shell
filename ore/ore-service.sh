@@ -10,7 +10,7 @@ After=network-online.target
 [Service]
 User=root
 WorkingDirectory=/root
-ExecStart=/bin/bash -c 'ore --rpc https://api.mainnet-beta.solana.com --keypair ~/.config/solana/id.json --priority-fee 1 mine --threads 4'
+ExecStart=/bin/bash -c '($which ore) --rpc https://api.mainnet-beta.solana.com --keypair ~/.config/solana/id.json --priority-fee 1 mine --threads 4'
 Restart=always
 StandardOutput=append:/root/ore.log
 StandardError=append:/root/ore.log
