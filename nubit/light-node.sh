@@ -22,4 +22,4 @@ EOF
 sudo systemctl daemon-reload
 sudo systemctl enable nubit-light
 sudo systemctl restart nubit-light
-sudo tail -f /root/nubit-ln.log
+sudo tail -f /root/nubit-ln.log | grep -A 4 NAME
